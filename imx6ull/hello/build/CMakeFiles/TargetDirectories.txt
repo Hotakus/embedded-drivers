@@ -1,3 +1,0 @@
-/home/hotakus/workspace/drivers/modules/hello/build/CMakeFiles/rebuild_cache.dir
-/home/hotakus/workspace/drivers/modules/hello/build/CMakeFiles/hello.exe.dir
-/home/hotakus/workspace/drivers/modules/hello/build/CMakeFiles/edit_cache.dir
