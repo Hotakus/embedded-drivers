@@ -1,0 +1,1 @@
+cmd_/home/hotakus/workspace/drivers/modules/hello/drv/hello_mod_normal.o := /home/hotakus/workspace/drivers/100ask_imx6ull_mini-sdk/ToolChain/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-ld -EL    -r -o /home/hotakus/workspace/drivers/modules/hello/drv/hello_mod_normal.o /home/hotakus/workspace/drivers/modules/hello/drv/hello.o 

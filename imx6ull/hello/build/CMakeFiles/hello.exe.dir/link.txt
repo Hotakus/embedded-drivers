@@ -1,0 +1,1 @@
+/home/hotakus/workspace/drivers/100ask_imx6ull_mini-sdk/ToolChain/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-gcc CMakeFiles/hello.exe.dir/app/hello_test.c.o -o hello.exe 

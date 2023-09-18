@@ -1,0 +1,3 @@
+/home/hotakus/workspace/drivers/modules/imx6ull/hello/cmake-build-debug/CMakeFiles/hello.exe.dir
+/home/hotakus/workspace/drivers/modules/imx6ull/hello/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/hotakus/workspace/drivers/modules/imx6ull/hello/cmake-build-debug/CMakeFiles/rebuild_cache.dir

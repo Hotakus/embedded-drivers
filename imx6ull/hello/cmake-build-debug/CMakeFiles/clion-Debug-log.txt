@@ -1,0 +1,10 @@
+/home/hotakus/.cache/JetBrains/RemoteDev/dist/8cdb604a302b8_CLion-232.8660.139/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/hotakus/.cache/JetBrains/RemoteDev/dist/8cdb604a302b8_CLion-232.8660.139/bin/ninja/linux/x64/ninja -G Ninja -S /home/hotakus/workspace/drivers/modules/imx6ull/hello -B /home/hotakus/workspace/drivers/modules/imx6ull/hello/cmake-build-debug
+-- The C compiler identification is GNU 8.5.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (1.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/hotakus/workspace/drivers/modules/imx6ull/hello/cmake-build-debug
