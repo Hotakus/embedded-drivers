@@ -140,7 +140,7 @@ ssize_t hello_write(struct file *fp, const char __user *buf, size_t cnt, loff_t 
 
 ssize_t hello_read(struct file *fp, char __user *buf, size_t cnt, loff_t *loff) {
     uint32_t res = reg_gpio5_remap->DR;
-    copy_to_user(buf, &res, sizeof(res));
+    res = copy_to_user(buf, &res, sizeof(res));
     return 0;
 }
 

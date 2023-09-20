@@ -9,7 +9,7 @@ set(CMAKE_CXX_COMPILER /home/hotakus/workspace/drivers/100ask_imx6ull_mini-sdk/T
 
 include_directories(
         .
-        ../include/
+        ../../include/imx6ull/
         ${LINUX_KERNEL_DIR}include/
         ${LINUX_KERNEL_DIR}arch/arm/include/
 )
