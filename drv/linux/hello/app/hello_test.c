@@ -3,12 +3,16 @@
 //
 
 #include "hello_test.h"
+#include "hello_typedefs.h"
+#include "ioctl_cmds.h"
 
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
 #include <stdint.h>
+#include <sys/ioctl.h>
+#include <malloc.h>
 
 int main(int argc, char **argv) {
 
@@ -30,11 +34,22 @@ int main(int argc, char **argv) {
         return -1;
     }
 
+    hello_t ht;
+    ht.age = 20;
+    strcpy(ht.gender, "male");
+
+    int res = ioctl(fd, HELLO_IOCTL_CMD_GREET, &ht);
+    if (res) {
+        printf("ioctl error\n");
+        exit(-1);
+    }
+
     while(1) {
         write(fd, &status, 1);
         status = !status;
         sleep(1);
     }
+
 
     close(fd);
 

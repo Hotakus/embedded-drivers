@@ -12,9 +12,9 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#include "../../../include/imx6ull/MCIMX6Y2.h"
-#include "../../../include/imx6ull/fsl_iomuxc.h"
-#include "../../../include/imx6ull/basetype.h"
+#include "MCIMX6Y2.h"
+#include "fsl_iomuxc.h"
+#include "basetype.h"
 
 
 #endif // !COMMON_H

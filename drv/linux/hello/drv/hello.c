@@ -2,7 +2,9 @@
 // Created by hotakus on 9/15/23.
 //
 
-#include "common_inc.h"
+#include "../common_inc/imx6ull/bsp.h"
+#include "../common_inc/hello_typedefs.h"
+
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/fs.h>
@@ -18,9 +20,11 @@ static int hello_init(void);
 static void hello_exit(void);
 
 static int hello_open(struct inode *, struct file *);
-static int hello_release (struct inode *, struct file *);
 static ssize_t hello_read(struct file *, char __user *, size_t, loff_t *);
 static ssize_t hello_write(struct file *, const char __user *, size_t, loff_t *);
+
+static long hello_unlocked_ioctl(struct file *, unsigned int, unsigned long);
+
 
 /* module's entrance and exit */
 module_init(hello_init);
@@ -33,6 +37,7 @@ MODULE_ALIAS("hhm");
 MODULE_LICENSE("GPL v2");
 MODULE_VERSION("v1.0.0");
 
+
 /* variables */
 static int major;                               // 主设备号
 static int minor_cnt = 3;
@@ -40,9 +45,9 @@ static struct class *hello_class;               // 设备类
 static struct file_operations hello_fopt = {    // 设备文件操作
     .owner = THIS_MODULE,
     .open = hello_open,
-    .release = hello_release,
     .read = hello_read,
     .write = hello_write,
+    .unlocked_ioctl = hello_unlocked_ioctl,
 };
 
 static __IO CCM_Type *reg_ccm_remap         = NULL;
@@ -115,12 +120,6 @@ int hello_open(struct inode *inode, struct file *fp) {
 }
 
 
-int hello_release (struct inode * inode, struct file * fp) {
-
-    return 0;
-}
-
-
 ssize_t hello_write(struct file *fp, const char __user *buf, size_t cnt, loff_t *loff) {
     char val;
     uint32_t res = copy_from_user(&val, buf, 1);
@@ -144,3 +143,15 @@ ssize_t hello_read(struct file *fp, char __user *buf, size_t cnt, loff_t *loff) 
     return 0;
 }
 
+
+long hello_unlocked_ioctl(struct file *fp, unsigned int cmd, unsigned long arg) {
+    pr_info("You enter %s\n", __func__ );
+    pr_info("Your cmd is %d\n", cmd );
+
+    hello_t ht;
+    copy_from_user(&ht, (hello_t __user *)arg, sizeof(hello_t));
+    pr_info("Ages is %d\n",  ht.age);
+    pr_info("Gender is %s\n",  ht.gender);
+
+    return 0;
+}
